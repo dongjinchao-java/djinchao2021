@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+
+<!--给当前服务提供者命名-->
+    <dubbo:application name="dubbo_provider"/>
+    <!--指定zookeeper注册中心的address和port，如果使用的是redis则address使用redis的address
+     <dubbo:registry address="zookeeper://127.0.0.1:2181" ></dubbo:registry>
+    -->
+    <dubbo:registry address="N/A" ></dubbo:registry>
+    <!--协议必须使用dubbo，端口号是提供一个可供消费者使用的端口-->
+    <dubbo:protocol name="dubbo" port="20880"/>
+    <!--开启注解扫描，使dubbo的注解生效
+    <dubbo:annotation package="org.djc.cross"/>
+    -->
+    <bean id="wordService" class="org.djc.cross.WorldServiceImpl" />
+    <dubbo:service interface="org.djc.cross.WorldService" ref="wordService" />
+
+</beans>

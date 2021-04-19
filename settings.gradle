@@ -1,0 +1,8 @@
+rootProject.name = 'djinchao2021'
+include 'worldService'
+include 'dubbo-provider'
+include 'dubbo-consumer'
+include 'djc_web'
+include 'dubbo-point'
+include 'threadPoolMonitor'
+

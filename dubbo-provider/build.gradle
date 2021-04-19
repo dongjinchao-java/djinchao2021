@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':worldService')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.7.0'
+    implementation group: 'com.alibaba', name: 'dubbo', version: '2.6.9'
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.5'
+    implementation group: 'org.apache.curator', name: 'curator-framework', version: '4.2.0'
+    implementation group: 'org.apache.curator', name: 'curator-recipes', version: '4.2.0'
+
+}
